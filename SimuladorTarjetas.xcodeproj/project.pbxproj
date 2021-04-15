@@ -99,6 +99,10 @@
 		0C54211726290121004B6B7C /* SimuladorTarjetas */ = {
 			isa = PBXGroup;
 			children = (
+				0C54214E26290194004B6B7C /* models */,
+				0C54214D2629018B004B6B7C /* utils */,
+				0C54214C26290181004B6B7C /* environments */,
+				0C54214B26290177004B6B7C /* service */,
 				0C54211826290121004B6B7C /* AppDelegate.swift */,
 				0C54211A26290121004B6B7C /* SceneDelegate.swift */,
 				0C54211C26290121004B6B7C /* ViewController.swift */,
@@ -126,6 +130,34 @@
 				0C54213C26290125004B6B7C /* Info.plist */,
 			);
 			path = SimuladorTarjetasUITests;
+			sourceTree = "<group>";
+		};
+		0C54214B26290177004B6B7C /* service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		0C54214C26290181004B6B7C /* environments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = environments;
+			sourceTree = "<group>";
+		};
+		0C54214D2629018B004B6B7C /* utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		0C54214E26290194004B6B7C /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
