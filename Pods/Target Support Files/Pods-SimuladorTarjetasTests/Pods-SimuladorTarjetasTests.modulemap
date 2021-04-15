@@ -1,0 +1,6 @@
+framework module Pods_SimuladorTarjetasTests {
+  umbrella header "Pods-SimuladorTarjetasTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
