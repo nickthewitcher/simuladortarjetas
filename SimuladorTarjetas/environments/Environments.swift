@@ -10,6 +10,7 @@ import Foundation
 struct Environments{
     
     static let apiURL = "http://35.192.80.171/bootcamp/wp-json/bcp/simulator/"
+    static let prefixDomain = "http://35.192.80.171"
 //    #if DEV
 //        static let apiURL = "http://35.192.80.171/bootcamp/wp-json/bcp/simulator/"
 //

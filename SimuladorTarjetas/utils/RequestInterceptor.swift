@@ -21,7 +21,7 @@ final class RequestInterceptor: Alamofire.RequestInterceptor {
     }
 
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        guard urlRequest.url?.absoluteString.hasPrefix("http://35.192.80.171") == true else {
+        guard urlRequest.url?.absoluteString.hasPrefix(Environments.prefixDomain) == true else {
             /// If the request does not require authentication, we can directly return it as unmodified.
             return completion(.success(urlRequest))
         }
