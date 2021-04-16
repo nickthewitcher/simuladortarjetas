@@ -33,6 +33,30 @@ class ApiService{
                     return Disposables.create()
                 }}
 
+    func postDataSimulator(dni: String, tarjeta: String, monto: String, cuotas: String, tea: String, dia_pago: String) -> Observable<Simulation>{
+        //encoding: URLEncoding.default
+        //encoding: JSONEncoding.default
+        
+        let parameters: Parameters=[
+            "dni":dni,
+            "tarjeta":tarjeta,
+            "monto":monto,
+            "cuotas":cuotas,
+            "tea":tea,
+            "dia_pago":dia_pago
+               ]
+        return Observable.create { [weak self] observer -> Disposable in
+            self?.api.session.request(Environments.apiURL,method: .post, parameters: parameters,encoding: URLEncoding.default)
+                .validate()
+                .responseDecodable(of: Simulation.self) { result in
+                    switch result.result {
+                    case .success(let simulation):
+                        observer.onNext(simulation)
+                    case .failure(let error): observer.onError(error)
+                    }
+            }
+                    return Disposables.create()
+                }}
 
 }
 

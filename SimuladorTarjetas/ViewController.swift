@@ -31,6 +31,42 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var diaPagoTextField: UITextField!
     
      
+    @IBAction func clickEnv(_ sender: UIButton) {
+        print("button presion")
+        
+        //validamos la data
+        
+        if dniTextField.text != "" && tipoTarjetaTextField.text != ""
+            && montoTextField.text != "" && cuotasTextField.text != ""
+            && tasasTextField.text != "" && diaPagoTextField.text != ""
+        {
+            print("validado")
+            
+            let apiService = ApiService.sharedInstance
+            
+            _ = apiService.postDataSimulator(dni: dniTextField.text!, tarjeta: tipoTarjetaTextField.text!, monto: montoTextField.text!, cuotas: cuotasTextField.text!, tea: tasasTextField.text!, dia_pago:  diaPagoTextField.text!)
+                .subscribe(
+                    onNext: {
+                        print("resultado POST")
+                        print("onNext: \($0)")
+                    },
+                    onError: { print("onError: \($0)")
+                       });
+        }
+        else{
+            print("no validado")
+            let alert = UIAlertController(title: "Aviso", message: "Falta llenar datos", preferredStyle: UIAlertController.Style.alert)
+
+                    // add an action (button)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                    // show the alert
+                    self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
+    }
     
     
     var cardPicker = UIPickerView()
@@ -121,6 +157,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 },
                 onError: { print("onError: \($0)")
                    });
+        
+       
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
