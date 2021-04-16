@@ -12,6 +12,9 @@ import RxSwift
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
  
     
+      
+   
+    
     @IBOutlet weak var dniTextField: UITextField!
     
     
@@ -30,6 +33,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBOutlet weak var diaPagoTextField: UITextField!
     
+    var monedaText: String = ""
+    var montoText: String = ""
+    var fechaText: String = ""
+    
      
     @IBAction func clickEnv(_ sender: UIButton) {
         print("button presion")
@@ -40,7 +47,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             && montoTextField.text != "" && cuotasTextField.text != ""
             && tasasTextField.text != "" && diaPagoTextField.text != ""
         {
-            print("validado")
+            print("data validada")
             
             let apiService = ApiService.sharedInstance
             
@@ -49,23 +56,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     onNext: {
                         print("resultado POST")
                         print("onNext: \($0)")
+                        self.monedaText = ($0).response.moneda
+                        self.montoText = ($0).response.cuota
+                        self.fechaText = ($0).response.primeraCuota
+                        
+                        self.performSegue(withIdentifier: "ShowSecondController", sender: sender)
+
                     },
                     onError: { print("onError: \($0)")
                        });
         }
-        else{
-            print("no validado")
-            let alert = UIAlertController(title: "Aviso", message: "Falta llenar datos", preferredStyle: UIAlertController.Style.alert)
-
-                    // add an action (button)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-                    // show the alert
-                    self.present(alert, animated: true, completion: nil)
-        }
-        
-        
-        
     }
     
     
@@ -91,6 +91,32 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var pagosPickerData: [String] = [String]()
     var pagosOrdenElegido: Int = 0
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "ShowSecondController"
+        {
+            if dniTextField.text != "" && tipoTarjetaTextField.text != ""
+                && montoTextField.text != "" && cuotasTextField.text != ""
+                && tasasTextField.text != "" && diaPagoTextField.text != ""
+            {
+                print("validado")
+               return true
+            }
+            else{
+                print("no validado")
+                let alert = UIAlertController(title: "Aviso", message: "Falta llenar datos", preferredStyle: UIAlertController.Style.alert)
+
+                        // add an action (button)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+                        // show the alert
+                        self.present(alert, animated: true, completion: nil)
+                return false
+            }
+        }
+        else{
+            return false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,6 +187,19 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
        
         
         
+    }
+    
+  
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowSecondController"
+        {
+            let destinationVC = segue.destination as! SecondController
+            destinationVC.monedaText = self.monedaText
+            destinationVC.montoText = self.montoText
+            destinationVC.fechaText = self.fechaText
+        }
+       
     }
     
     override func didReceiveMemoryWarning() {
