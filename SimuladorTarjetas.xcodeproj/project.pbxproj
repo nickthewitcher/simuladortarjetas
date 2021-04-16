@@ -25,6 +25,7 @@
 		0C54218026290409004B6B7C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54217F26290409004B6B7C /* ApiService.swift */; };
 		0C54218526295082004B6B7C /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C54218426295082004B6B7C /* Simulation.swift */; };
 		0C54218A262950FC004B6B7C /* ResponseSimulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C542189262950FC004B6B7C /* ResponseSimulation.swift */; };
+		0C5421D82629B3E7004B6B7C /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5421D72629B3E7004B6B7C /* SecondController.swift */; };
 		ACF22934CC75B3CB897D361A /* Pods_SimuladorTarjetas_SimuladorTarjetasUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1942418897530DF9B3FC8B0 /* Pods_SimuladorTarjetas_SimuladorTarjetasUITests.framework */; };
 		BB816A1448AE80DA935179D3 /* Pods_SimuladorTarjetasTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5411A2DCF309F4C05D82EF10 /* Pods_SimuladorTarjetasTests.framework */; };
 		FDC14E1D4CE0C6A74A1EC2BD /* Pods_SimuladorTarjetas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B8C5E85F2BE946BBB03F02 /* Pods_SimuladorTarjetas.framework */; };
@@ -73,6 +74,7 @@
 		0C54217F26290409004B6B7C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		0C54218426295082004B6B7C /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		0C542189262950FC004B6B7C /* ResponseSimulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSimulation.swift; sourceTree = "<group>"; };
+		0C5421D72629B3E7004B6B7C /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 		2262F121E8C723465AF45F24 /* Pods-SimuladorTarjetas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimuladorTarjetas.debug.xcconfig"; path = "Target Support Files/Pods-SimuladorTarjetas/Pods-SimuladorTarjetas.debug.xcconfig"; sourceTree = "<group>"; };
 		30FD0F715577C28821ACDBCD /* Pods-SimuladorTarjetasTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimuladorTarjetasTests.debug.xcconfig"; path = "Target Support Files/Pods-SimuladorTarjetasTests/Pods-SimuladorTarjetasTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5411A2DCF309F4C05D82EF10 /* Pods_SimuladorTarjetasTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimuladorTarjetasTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				0C54212126290125004B6B7C /* Assets.xcassets */,
 				0C54212326290125004B6B7C /* LaunchScreen.storyboard */,
 				0C54212626290125004B6B7C /* Info.plist */,
+				0C5421D72629B3E7004B6B7C /* SecondController.swift */,
 			);
 			path = SimuladorTarjetas;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				0C54216026290351004B6B7C /* Tarjetas.swift in Sources */,
 				0C54218526295082004B6B7C /* Simulation.swift in Sources */,
 				0C54211926290121004B6B7C /* AppDelegate.swift in Sources */,
+				0C5421D82629B3E7004B6B7C /* SecondController.swift in Sources */,
 				0C54215B26290340004B6B7C /* Simulator.swift in Sources */,
 				0C54218026290409004B6B7C /* ApiService.swift in Sources */,
 				0C542174262903AD004B6B7C /* Environments.swift in Sources */,
